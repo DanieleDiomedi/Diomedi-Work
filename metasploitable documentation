@@ -1,0 +1,49 @@
+# Metasploitable Analysis — Case Study
+
+This repository documents a hands-on learning project I completed using a local Metasploitable virtual machine. The goal of the exercise was to practice common reconnaissance, enumeration and vulnerability assessment techniques in a controlled lab environment and to reflect on lessons learned about defensive measures.
+
+## Project status
+This is a retrospective case study of work I performed previously in a private lab environment. The VM and any exploit attempts were executed only on isolated, non-production systems for educational purposes.
+
+## Objectives
+Describe the lab setup and learning objectives, the tools I practiced with, the high-level methodology I followed, and the defensive recommendations derived from the exercise.
+
+## Lab environment
+A personal, isolated lab consisting of:
+- Attacker machine: Kali Linux (or similar)
+- Target machine: Metasploitable (the intentionally vulnerable VM)
+- Network: NAT/host-only network with no internet-facing exposure
+
+No VM images or live exploits are included in this repository.
+
+## Tools used
+Examples of common tools used for learning and assessment:
+- Nmap (service discovery and version detection)
+- Netcat (basic service interaction)
+- Metasploit Framework (framework for learning exploitation workflows)
+- Searchsploit / Exploit-DB (researching known vulnerabilities)
+- Wireshark / Tcpdump (traffic analysis)
+
+## High-level methodology
+I followed a standard, responsible testing workflow:
+1. Reconnaissance and host discovery to map reachable hosts.
+2. Service enumeration to discover open ports and running services.
+3. Version and banner analysis to identify likely vulnerable software.
+4. Vulnerability research to map known issues to observed services.
+5. Proof-of-concept validation in the isolated lab (no production targets).
+6. Documentation of findings and defensive recommendations.
+
+This README intentionally preserves procedural clarity without including step-by-step exploit commands or files that could be used outside a controlled lab.
+
+## Example (non-actionable) commands
+Below are **illustrative, non-targeted** examples of the types of commands used during enumeration. Replace values with your lab targets only and never run scans against systems you do not own or have explicit permission to test.
+
+```bash
+# service/version scan (illustrative)
+nmap -sV -Pn 192.168.x.x
+
+# basic banner check (illustrative)
+nc -v 192.168.x.x 22
+
+# search for public exploits (illustrative)
+searchsploit openvpn
